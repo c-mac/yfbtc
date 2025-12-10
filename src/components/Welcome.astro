@@ -1,210 +1,138 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import astroLogo from "../assets/astro.svg";
+import background from "../assets/background.svg";
+import Hero from "./Hero.astro";
+
+const slides = [
+  { img: "/src/assets/1.JPG", alt: "First placeholder" },
+  { img: "/src/assets/L1014610.jpg", alt: "Third placeholder" },
+];
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build"
-				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
-			>
-			<h1>
-				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
-			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">Read our docs</a>
-				<a href="https://astro.build/chat"
-					>Join our Discord <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"
-						><path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path></svg
-					>
-				</a>
-			</section>
-		</section>
-	</main>
+<div
+  class="flex flex-col items-center text-center h-full overflow-y-auto bg-slate-300"
+>
+  <Hero heroImage="/src/assets/home.JPG" />
 
-	<a href="https://astro.build/blog/astro-5/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"
-			><path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"></path></svg
-		>
-		<h2>What's New in Astro 5.0?</h2>
-		<p>
-			From content layers to server islands, click to learn more about the new features and
-			improvements in Astro 5.0
-		</p>
-	</a>
+  <div class="flex items-center justify-center flex-1 w-full p-4">
+    <div class="max-w-4xl w-full">
+      <div class="bg-slate-200 rounded-lg shadow-xl p-8 md:p-12 space-y-6">
+        <p class="text-gray-700 text-lg leading-relaxe text-left">
+          We are an informal arrangement of theater-loving friends based in San
+          Francisco. In January 2023, company members Nat & Cam decided they
+          wanted to put on a play, found ten friends (half of whom had never
+          acted before), and performed an original musical one night only to a
+          crowd of over 50 people crammed into their basement. It was so much
+          fun that half the audience wanted to audition for the next play.
+        </p>
+        <p class="text-gray-700 text-lg leading-relaxed text-left">
+          Next up were two one acts in a friend’s living room, a musical with a
+          live band at <a
+            href="https://maps.app.goo.gl/D4fMEk4VDWkvevCt8"
+            class="text-blue-600 hover:underline"
+            >Ruth’s Table Community Center</a
+          >, and a variety show at <a
+            href="https://maps.app.goo.gl/1v7K1fvuS41F5pUw6"
+            class="text-blue-600 hover:underline">The Nook</a
+          >. We talked about going back to our casual basement roots this year…
+          instead we’re here with a two act musical and a 5-piece band. Oops!
+          Our cast & crew are entirely made up of friends, word-of-mouth
+          acquaintances, and people who attended previous productions and
+          thought: “Maybe I could do that!” We would love for you to get
+          involved and discover (or rediscover) the magic of the theater arts.
+          Join us!
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="flex items-center justify-center gap-4">
+    <button
+      id="prevBtn"
+      class="w-12 h-12 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-75 transition-opacity flex items-center justify-center text-xl font-bold"
+    >
+      ‹
+    </button>
+    <div class="relative w-[600px] h-[400px] overflow-hidden rounded-lg">
+      <div
+        id="carousel"
+        class="flex h-full transition-transform duration-500 ease-in-out"
+      >
+        {
+          slides.map((slide, index) => (
+            <div class="flex-shrink-0 w-full h-full relative carousel-item">
+              <img
+                src={slide.img}
+                alt={slide.alt}
+                class="w-full h-full object-cover"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <button
+      id="nextBtn"
+      class="w-12 h-12 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-75 transition-opacity flex items-center justify-center text-xl font-bold"
+    >
+      ›
+    </button>
+  </div> -->
+  <!-- <div
+    class="flex flex-col shadow-xl bg-slate-200 border-gray-100 text-gray-700 text-left p-10 rounded-lg gap-4"
+  >
+    <p>
+      We <span class="italic">promise</span> we will only ever email you about:
+    </p>
+    <ul class="list-disc pl-5 space-y-2">
+      <li>
+        <p>Upcoming shows to attend</p>
+      </li>
+      <li>
+        <p>Upcoming shows to participate in (auditions, crew, etc.)</p>
+      </li>
+    </ul>
+
+    <div class="flex rounded-lg shadow-sm hover:shadow-lg transition-all">
+      <input
+        class="p-2 rounded-l-lg border-2 border-r-0 border-gray-300 focus:outline-none focus:ring-1 focus:ring-green-300 focus:border-green-300"
+        placeholder="Your email here..."
+        type="email"
+      />
+      <button
+        class="bg-green-300 text-white px-4 py-2 hover:bg-green-400 transition-all hover:scale-105 rounded-r-lg"
+      >
+        Join our newsletter!
+      </button>
+    </div>
+  </div> -->
 </div>
 
-<style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+<script>
+  let currentIndex = 0;
+  const totalSlides = 3;
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+  function updateCarousel() {
+    const carousel = document.getElementById("carousel");
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+    // Move carousel to show current item
+    const translateX = -currentIndex * 100; // 100% width per slide
+    carousel.style.transform = `translateX(${translateX}%)`;
+  }
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  }
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+  // Add event listeners
+  document.getElementById("nextBtn").addEventListener("click", nextSlide);
+  document.getElementById("prevBtn").addEventListener("click", prevSlide);
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
-
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
-
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
-
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
-
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
-
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
-
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
-
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
-</style>
+  // Initialize carousel
+  updateCarousel();
+</script>

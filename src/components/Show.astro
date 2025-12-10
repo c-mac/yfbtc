@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  date?: string;
+  author?: string;
+  authorLabel?: string;
+}
+
+const { title, date, author, authorLabel } = Astro.props;
+---
+
+<div class="space-y-6">
+  <div class="space-y-1">
+    <h3 class="text-2xl font-bold text-gray-800 fancy-title">
+      {title}
+    </h3>
+    {
+      (date || author) && (
+        <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-3">
+          {date && (
+            <>
+              <span class="text-lg md:text-xl text-gray-600 italic">
+                {date}
+              </span>
+              {author && <span class="text-gray-400">•</span>}
+            </>
+          )}
+          {author && (
+            <span class="text-sm md:text-base text-gray-600">
+              {authorLabel}
+              <span class="font-semibold text-gray-700">{author}</span>
+            </span>
+          )}
+        </div>
+      )
+    }
+  </div>
+
+  <div class="bg-slate-200 rounded-lg shadow-xl p-4 relative overflow-hidden">
+    <!-- Decorative quote mark -->
+    <div
+      class="absolute top-2 left-4 text-6xl md:text-7xl text-gray-300 font-serif leading-none fancy-quote"
+    >
+      "
+    </div>
+
+    <div class="relative z-10">
+      <div class="text-gray-700 text-lg leading-relaxed px-2">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .fancy-title {
+    font-family: "Borel", cursive;
+    letter-spacing: 0.05em;
+  }
+
+  .fancy-quote {
+    font-family: "Borel", cursive;
+    opacity: 0.4;
+    user-select: none;
+    pointer-events: none;
+  }
+</style>

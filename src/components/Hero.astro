@@ -1,0 +1,54 @@
+---
+interface Props {
+  heroImage?: string;
+  objectPosition?: string;
+}
+
+const { heroImage = "/src/assets/L1015119.JPG", objectPosition = "center" } = Astro.props;
+---
+
+<!-- Hero Section with Overlay Text -->
+<div
+  class="relative w-full h-[30vh] min-h-[300px] flex items-center justify-center"
+>
+  <img
+    src={heroImage}
+    alt="YFBTC Hero"
+    class="absolute inset-0 w-full h-full object-cover"
+    style={`object-position: ${objectPosition};`}
+  />
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <!-- Header Navigation Links -->
+  <nav class="absolute top-4 right-4 z-20 flex gap-6">
+    <a
+      href="/"
+      class="text-white font-medium hover:underline transition-all"
+    >
+      Home
+    </a>
+    <a
+      href="/past-shows"
+      class="text-white font-medium hover:underline transition-all"
+    >
+      Past Shows
+    </a>
+  </nav>
+
+  <h3
+    class="fancy relative z-10 text-white text-6xl md:text-7xl lg:text-8xl px-4"
+  >
+    Your Friends' Basement Theater Company
+  </h3>
+</div>
+
+<style>
+  h3 {
+    font-size: xxx-large;
+  }
+
+  .fancy {
+    font-family: "Borel";
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  }
+</style>

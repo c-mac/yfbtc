@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Show from "../components/Show.astro";
+---
+
+<Layout>
+  <Hero heroImage="/src/assets/past.jpg" objectPosition="center 40%" />
+  <div class="min-h-screen bg-slate-300 p-8 md:p-20">
+    <div class="max-w-4xl mx-auto space-y-16">
+      <Show
+        title="Lines"
+        date="Fall 2025"
+        authorLabel="An original musical written by company member"
+        author="Violet Trachtenberg"
+      >
+        <p>
+          This play investigates the complexities of legacy, and gives honor to
+          our
+          <span class="italic font-medium"
+            >cringy and vulnerable tweenage selves</span
+          >. To borrow from Paula Vogel: "This is a play about the gifts we
+          receive from the people who harm us."
+        </p>
+      </Show>
+      <Show title="Variety Show" date="Spring 2025">
+        <p>
+          Featuring works by Tom Stoppard, Paula Vogel, Julia Cho, Jose Llana,
+          William Finn, Claude-Michel Schönberg, Terry Bisson, and company
+          member Noam Samuel
+        </p>
+      </Show>
+      <Show
+        title="Bros in the Wild"
+        date="Fall 2024"
+        authorLabel="An original musical written by company member"
+        author="Sara Saavedra"
+      >
+        <p>
+          A heartwarming tale of friendship and adventure, "Bros in the Wild" is
+          a story of characters whose sincere care for each other is plainly
+          known. This musical explores relationships of all shapes and sizes,
+          intertwined with a touch of mystical whimsy. And written in a mere
+          three weeks!
+        </p>
+      </Show>
+      <Show
+        title="Nightmaretime and The Truth"
+        date="Spring 2024"
+        authorLabel="Two original one-act plays written by friend of the company"
+        author="Emily Elyse"
+      >
+        <p>
+          A fascination with psychological unraveling; the marrying of
+          unassuming everyday experiences with the mythic; an obsession with
+          women who are misguided or wronged... these are just a few things to
+          be discovered in these two plays. Though often dark, mysterious, and
+          neurotic, Emily's stories also carry a deep tenderness and sharp wit,
+          exploring the complexity of human morality, and questioning why we
+          make the choices we do.
+        </p>
+      </Show>
+      <Show
+        title="In Good Time"
+        date="Fall 2023"
+        authorLabel="An original musical written by company member"
+        author="Nat Lista"
+      >
+        <p>
+          The musical that got us started! A heartfelt and magical tale about
+          friendship and confronting your past... literally!
+        </p>
+      </Show>
+    </div>
+  </div>
+</Layout>
