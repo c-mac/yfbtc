@@ -5,10 +5,10 @@ import { webcore } from "webcoreui/integration";
 
 // https://astro.build/config
 export default defineConfig({
-  // Site URL for GitHub Pages (set via ASTRO_SITE_URL env var or update directly)
-  // For project pages: https://username.github.io/repository-name
-  // For user/organization pages: https://username.github.io
+  // GitHub Pages project page configuration
+  // For default GitHub Pages URL: https://c-mac.github.io/yfbtc
+  // For custom domain (e.g., yfbtc.c-mac.xyz): update site URL and remove base
   site: process.env.ASTRO_SITE_URL || 'https://c-mac.github.io/yfbtc',
-  base: '/yfbtc',
+  base: '/yfbtc', // Remove this line if using a custom domain at root
   integrations: [tailwind(), webcore()],
 });
