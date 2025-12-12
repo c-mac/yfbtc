@@ -2,10 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Show from "../components/Show.astro";
+import pastImage from "../assets/past.jpg";
 ---
 
 <Layout>
-  <Hero heroImage="/src/assets/past.jpg" objectPosition="center 40%" />
+  <Hero heroImage={pastImage.src} objectPosition="center 40%" />
   <div class="min-h-screen bg-slate-300 p-8 md:p-20">
     <div class="max-w-4xl mx-auto space-y-16">
       <Show

@@ -1,6 +1,7 @@
 ---
 import astroLogo from "../assets/astro.svg";
 import background from "../assets/background.svg";
+import homeImage from "../assets/home.JPG";
 import Hero from "./Hero.astro";
 
 const slides = [
@@ -12,7 +13,7 @@ const slides = [
 <div
   class="flex flex-col items-center text-center h-full overflow-y-auto bg-slate-300"
 >
-  <Hero heroImage="/src/assets/home.JPG" />
+  <Hero heroImage={homeImage.src} />
 
   <div class="flex items-center justify-center flex-1 w-full p-4">
     <div class="max-w-4xl w-full">
