@@ -15,10 +15,17 @@ const slides = [
 >
   <Hero heroImage={homeImage.src} />
 
-  <div class="flex items-center justify-center flex-1 w-full p-4">
-    <div class="max-w-4xl w-full">
-      <div class="bg-slate-200 rounded-lg shadow-xl p-8 md:p-12 space-y-6">
-        <p class="text-gray-700 text-lg leading-relaxe text-left">
+  <div
+    class="flex flex-col justify-center flex-1 w-full p-4 max-w-4xl gap-y-12"
+  >
+    <div class="space-y-1">
+      <p
+        class="text-2xl font-bold text-gray-800 fancy-title text-left mt-4 sm:mt-0"
+      >
+        About us
+      </p>
+      <div class="bg-slate-200 rounded-lg shadow-xl p-4 md:p-8 space-y-6">
+        <p class="text-gray-700 text-lg leading-relaxed text-left">
           We are an informal arrangement of theater-loving friends based in San
           Francisco. In January 2023, company members Nat & Cam decided they
           wanted to put on a play, found ten friends (half of whom had never
@@ -45,8 +52,27 @@ const slides = [
         </p>
       </div>
     </div>
-  </div>
-  <!-- <div class="flex items-center justify-center gap-4">
+    <div class="space-y-1">
+      <p class="text-2xl font-bold text-gray-800 fancy-title text-left">
+        Company directors
+      </p>
+      <div class="bg-slate-200 rounded-lg shadow-xl p-4 md:p-8 space-y-6">
+        <p class="text-gray-700 text-lg leading-relaxed text-left">
+          Nat Lista, Violet Trachtenberg, Cam McCallie
+        </p>
+      </div>
+    </div>
+    <div class="space-y-1">
+      <p class="text-2xl font-bold text-gray-800 fancy-title text-left">
+        Company playwrights
+      </p>
+      <div class="bg-slate-200 rounded-lg shadow-xl p-4 md:p-8 space-y-6">
+        <p class="text-gray-700 text-lg leading-relaxed text-left">
+          Sara Saavedra, Emily Elyse, Nat Lista, Violet Trachtenberg
+        </p>
+      </div>
+    </div>
+    <!-- <div class="flex items-center justify-center gap-4">
     <button
       id="prevBtn"
       class="w-12 h-12 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-75 transition-opacity flex items-center justify-center text-xl font-bold"
@@ -78,7 +104,7 @@ const slides = [
       ›
     </button>
   </div> -->
-  <!-- <div
+    <!-- <div
     class="flex flex-col shadow-xl bg-slate-200 border-gray-100 text-gray-700 text-left p-10 rounded-lg gap-4"
   >
     <p>
@@ -106,34 +132,42 @@ const slides = [
       </button>
     </div>
   </div> -->
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const totalSlides = 3;
+
+    function updateCarousel() {
+      const carousel = document.getElementById("carousel");
+
+      // Move carousel to show current item
+      const translateX = -currentIndex * 100; // 100% width per slide
+      carousel.style.transform = `translateX(${translateX}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    // Add event listeners
+    document.getElementById("nextBtn").addEventListener("click", nextSlide);
+    document.getElementById("prevBtn").addEventListener("click", prevSlide);
+
+    // Initialize carousel
+    updateCarousel();
+  </script>
+
+  <style>
+    .fancy-title {
+      font-family: "Borel", cursive;
+      letter-spacing: 0.05em;
+    }
+  </style>
 </div>
-
-<script>
-  let currentIndex = 0;
-  const totalSlides = 3;
-
-  function updateCarousel() {
-    const carousel = document.getElementById("carousel");
-
-    // Move carousel to show current item
-    const translateX = -currentIndex * 100; // 100% width per slide
-    carousel.style.transform = `translateX(${translateX}%)`;
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel();
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateCarousel();
-  }
-
-  // Add event listeners
-  document.getElementById("nextBtn").addEventListener("click", nextSlide);
-  document.getElementById("prevBtn").addEventListener("click", prevSlide);
-
-  // Initialize carousel
-  updateCarousel();
-</script>
